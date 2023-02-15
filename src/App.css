@@ -3,3 +3,31 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.App {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(222, 222, 222);
+}
+
+.game-container {
+  height: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  /* padding: 200px; */
+  text-align: center;
+}
+
+.game-intro {
+  width: 80%;
+}
+
+.game-intro > h1 {
+  color: #36006C;
+  margin-bottom: 20px;
+}
