@@ -16,9 +16,9 @@ function App() {
 				</div>
 
 				<div className="choice-card">
-					<Card value="Rock" imgSrc="./assets/Rock.svg" />
-					<Card value="Paper" imgSrc="./assets/Paper.svg" />
-					<Card value="Scissors" imgSrc="./assets/Scissors.svg" />
+					<Card value="Rock" />
+					<Card value="Paper" />
+					<Card value="Scissors" />
 				</div>
 			</div>
 		</div>
