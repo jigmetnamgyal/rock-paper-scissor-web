@@ -17,9 +17,9 @@
   width: 80%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   background-color: #ebebeb;
-  /* padding: 200px; */
   text-align: center;
 }
 

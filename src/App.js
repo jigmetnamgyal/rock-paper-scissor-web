@@ -1,4 +1,5 @@
 import "./App.css";
+import Card from "./components/card/card";
 
 function App() {
 	return (
@@ -14,7 +15,11 @@ function App() {
 					</p>
 				</div>
 
-				<div className="choice-card"></div>
+				<div className="choice-card">
+					<Card value="Rock" imgSrc="./assets/Rock.svg" />
+					<Card value="Paper" imgSrc="./assets/Paper.svg" />
+					<Card value="Scissors" imgSrc="./assets/Scissors.svg" />
+				</div>
 			</div>
 		</div>
 	);
