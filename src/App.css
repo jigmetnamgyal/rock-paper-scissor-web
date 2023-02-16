@@ -40,3 +40,7 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.hide-loading {
+  display: none !important;
+}

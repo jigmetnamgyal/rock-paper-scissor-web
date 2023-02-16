@@ -18,6 +18,10 @@
     padding-right: 30px;
 }
 
+.closeContainer > p{
+    cursor: pointer;
+}
+
 .loadingCardContainer {
     display: flex;
     justify-content: space-around;

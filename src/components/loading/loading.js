@@ -1,10 +1,10 @@
 import styles from "./loading.module.css";
 
-const Loading = ({ value }) => {
+const Loading = ({ value, handleCloseLoading }) => {
 	return (
 		<div className={styles.loadingCard}>
 			<div className={styles.closeContainer}>
-				<p>X</p>
+				<p onClick={handleCloseLoading}>X</p>
 			</div>
 
 			<div className={styles.loadingCardContainer}>
