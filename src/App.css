@@ -13,6 +13,7 @@
 }
 
 .game-container {
+  position: relative;
   height: 80%;
   width: 80%;
   display: flex;

@@ -1,5 +1,6 @@
 import "./App.css";
 import Card from "./components/card/card";
+import Loading from "./components/loading/loading";
 
 function App() {
 	return (
@@ -20,7 +21,11 @@ function App() {
 					<Card value="Paper" />
 					<Card value="Scissors" />
 				</div>
+
+				<Loading value="Rock" />
 			</div>
+
+			<div></div>
 		</div>
 	);
 }
