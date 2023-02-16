@@ -1,6 +1,7 @@
 import "./App.css";
 import Card from "./components/card/card";
 import Loading from "./components/loading/loading";
+import ResultCard from "./components/result/resultCard";
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 				</div>
 
 				<Loading value="Rock" />
+				<ResultCard value="Rock" curbChoice="Paper" result="It's a tie" />
 			</div>
 
 			<div></div>
