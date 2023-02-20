@@ -1,13 +1,13 @@
 import styles from "./resultCard.module.css";
 
-const ResultCard = ({ value, result, curbChoice }) => {
+const ResultCard = ({ value, result, closeResult }) => {
 	return (
 		<div className={styles.resultCard}>
 			<h3>{result}</h3>
-			<p>Curb with {curbChoice} wins</p>
-			<p>You with {value} wins</p>
 			<img src={`assets/${value}.svg`} alt={value} />
-			<button className={styles.btn}>OK</button>
+			<button className={styles.btn} onClick={closeResult}>
+				OK
+			</button>
 		</div>
 	);
 };

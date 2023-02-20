@@ -1,14 +1,28 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "./components/card/card";
 import Loading from "./components/loading/loading";
 import ResultCard from "./components/result/resultCard";
+import { useLazyQuery, gql } from "@apollo/client";
+
+const GAME_START = gql`
+	query GameStart($userChoice: GameEnum!) {
+		gameStart(userChoice: $userChoice) {
+			result
+		}
+	}
+`;
 
 function App() {
 	const [loadingCard, setLoadingCard] = useState(false);
-	const [value, setValue] = useState("");
+	const [value, setValue] = useState(null);
+	const [closeResult, setCloseResult] = useState(false);
 
-	const handleLoadingCard = () => setLoadingCard(true);
+	const [getResult, { loading, error, data }] = useLazyQuery(GAME_START, {
+		variables: { userChoice: value },
+	});
+
+	const handleCloseResult = () => setCloseResult(true);
 
 	const handleCloseLoading = () => setLoadingCard(false);
 
@@ -24,12 +38,13 @@ function App() {
 						degree of power and will lead to an outcome.
 					</p>
 				</div>
-
 				<div className="choice-card">
 					<div
 						onClick={() => {
 							setLoadingCard(true);
-							setValue("Rock");
+							setValue("rock");
+							getResult();
+							setCloseResult(false);
 						}}
 					>
 						<Card value="Rock" />
@@ -38,7 +53,9 @@ function App() {
 					<div
 						onClick={() => {
 							setLoadingCard(true);
-							setValue("Paper");
+							setValue("paper");
+							getResult();
+							setCloseResult(false);
 						}}
 					>
 						<Card value={"Paper"} />
@@ -47,17 +64,25 @@ function App() {
 					<div
 						onClick={() => {
 							setLoadingCard(true);
-							setValue("Scissors");
+							setValue("scissor");
+							getResult();
+							setCloseResult(false);
 						}}
 					>
-						<Card value="Scissors" />
+						<Card value="Scissor" />
 					</div>
 				</div>
-
-				{loadingCard && (
+				{loadingCard && loading && (
 					<Loading value={value} handleCloseLoading={handleCloseLoading} />
 				)}
-				{/* <ResultCard value="Rock" curbChoice="Paper" result="It's a tie" /> */}
+
+				{data && !closeResult && (
+					<ResultCard
+						value={value}
+						result={data.gameStart.result}
+						closeResult={handleCloseResult}
+					/>
+				)}
 			</div>
 
 			<div></div>
