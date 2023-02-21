@@ -1,0 +1,19 @@
+.card {
+    width: 230px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgb(222, 222, 222);
+}
+
+.card > img {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 20px;
+}

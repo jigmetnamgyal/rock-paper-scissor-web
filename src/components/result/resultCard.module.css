@@ -1,0 +1,36 @@
+.resultCard {
+    position: absolute;
+    top: calc(50% - 175px);
+    left: calc(50% - 150px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+}
+
+.resultCard > h3 {
+    color: #36006C;
+}
+
+.resultCard > img {
+    width: 30%;
+    height: 30%;
+}
+
+.btn {
+    width: 80%;
+    height: 40px;
+    background-color: #36006C;
+    color: white;
+    cursor: pointer;
+    border-style: none;
+    border: 2px solid #36006C;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: black;
+}
