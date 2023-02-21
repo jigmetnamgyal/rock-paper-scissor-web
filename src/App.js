@@ -26,6 +26,15 @@ function App() {
 
 	const handleCloseLoading = () => setLoadingCard(false);
 
+	const handleChoiceSelection = (choice) => {
+		setLoadingCard(true);
+		setValue(choice);
+		getResult();
+		setCloseResult(false);
+	};
+
+	if (error) alert(`Error! ${error}`);
+
 	return (
 		<div className="App">
 			<div className="game-container">
@@ -41,10 +50,7 @@ function App() {
 				<div className="choice-card">
 					<div
 						onClick={() => {
-							setLoadingCard(true);
-							setValue("rock");
-							getResult();
-							setCloseResult(false);
+							handleChoiceSelection("rock");
 						}}
 					>
 						<Card value="Rock" />
@@ -52,10 +58,7 @@ function App() {
 
 					<div
 						onClick={() => {
-							setLoadingCard(true);
-							setValue("paper");
-							getResult();
-							setCloseResult(false);
+							handleChoiceSelection("paper");
 						}}
 					>
 						<Card value={"Paper"} />
@@ -63,15 +66,13 @@ function App() {
 
 					<div
 						onClick={() => {
-							setLoadingCard(true);
-							setValue("scissor");
-							getResult();
-							setCloseResult(false);
+							handleChoiceSelection("scissor");
 						}}
 					>
 						<Card value="Scissor" />
 					</div>
 				</div>
+
 				{loadingCard && loading && (
 					<Loading value={value} handleCloseLoading={handleCloseLoading} />
 				)}
